@@ -1,0 +1,20 @@
+{
+  "finite_equal_allocation": {
+    "failure_sum": 0.049999999999999996,
+    "max_normalized": 8.220942915829418
+  },
+  "horizon_free": {
+    "failure_sum": 0.04756958561322382,
+    "max_normalized": 12.557297241427197
+  },
+  "known_final_horizon": {
+    "failure_sum": 0.05,
+    "final_cost_over_3K_log1a": 1.9780486254558391,
+    "final_normalized": 5.925704105937167,
+    "max_normalized": 19.805137857477874
+  },
+  "parameters": {
+    "K": 12,
+    "alpha": 0.05
+  }
+}
