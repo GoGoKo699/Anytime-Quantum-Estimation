@@ -1,6 +1,6 @@
 {
   "finite_equal_allocation": {
-    "failure_sum": 0.049999999999999996,
+    "failure_sum": 0.05,
     "max_normalized": 8.220942915829418
   },
   "horizon_free": {
