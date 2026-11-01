@@ -4,55 +4,49 @@
 
 For the phase oracle
 
-$$
-U_\theta=\operatorname{diag}(1,e^{i\theta}),
-$$
-
+```math
+U_\theta=\mathrm{diag}(1,e^{i\theta}),
+```
 all uses of the oracle, its inverse, and controlled versions are charged. The algorithm may keep arbitrary quantum memory, make adaptive measurements, and use parameter-independent controls. A deterministic radius r(T) is anytime-valid at confidence 1-alpha if
 
-$$
+```math
 \inf_\theta
 \Pr_\theta\!\left\{
 |\widehat\theta_T-\theta|\le r(T)
 \text{ for every query budget }T
 \right\}
 \ge 1-\alpha.
-$$
-
+```
 The optimal all-time shrinking envelope has order
 
-$$
+```math
 r(T)=\Theta\!\left(
 \frac{\log\log T+\log(1/\alpha)}{T}
 \right)
-$$
-
+```
 in the precise sense developed in the scientific account. The upper bound is a geometric schedule of standard fixed-confidence phase estimators. The lower bound shows that coherent memory and adaptive quantum control cannot remove the iterated-logarithm price of keeping **all** committed resolutions simultaneously reliable.
 
 The stronger statement is a multiscale summability law. Let a in (0,1) be the phase-interval width. If geometric precision a 3^{-k}/2 is reached at deterministic deadlines T_k, then universal constants B,D>0 obey
 
-$$
+```math
 \sum_{k\ge1}
 \exp[-D T_k a3^{-k}]
 \le B\alpha.
-$$
-
+```
 Consequently,
 
-$$
+```math
 \limsup_{T\to\infty}
 \frac{T r(T)}{\log\log T}>0,
-$$
-
+```
 and for K prescribed refinement levels,
 
-$$
+```math
 \max_{1\le k\le K}
 T_k a3^{-k}
 =
 \Omega\!\left(\log\frac{K}{\alpha}\right).
-$$
-
+```
 The finite-K theorem is a tradeoff over **all normalized deadlines**, not a lower bound on the last deadline alone. If the final precision is known in advance, the usual O(epsilon^{-1} log(1/alpha)) terminal complexity remains possible. That distinction is essential.
 
 ## Read the science
@@ -67,6 +61,10 @@ Start with [the exact model and results](science/model-and-results.md), then fol
 
 See [related work](references/related-work.md), [bibliographic records](references/bibliography.bib), and [verification](verification/README.md). The [LLM reading guide](llms.txt) maps questions to authoritative files.
 
+## Learn the project
+
+The learning route uses **Andrew Childs's _Lecture Notes on Quantum Algorithms_ (17 April 2025)** as its single educational anchor. Start with [the phase-estimation bridge](learning/anchor-bridge.md), then follow [the 30-milestone map](learning/milestones.md). The [learning entrypoint](learning/README.md) explains the route from quantum-query foundations to the probability-propagation proof and its operational boundaries.
+
 ## Why this is not a classical theorem in new notation
 
 Duchi and Haque established a Cantor-tree sequential-testing architecture for classical time-uniform estimation. Their lower step uses iid likelihoods and relative-entropy control between nearby hypotheses. That step does not directly transfer to a coherent phase oracle: with enough coherent queries, distinct point phases can become perfectly distinguishable.
@@ -77,16 +75,14 @@ The replacement here is a **bandlimited probability-propagation principle**. Fin
 
 If tau_k is the data-dependent time at which the kth committed estimate reaches precision a3^{-k}/2 and
 
-$$
+```math
 q_k=\sup_\theta\mathbb E_\theta[\tau_k]<\infty,
-$$
-
+```
 then an analogous law holds at fixed confidence below one half:
 
-$$
+```math
 \sum_k \exp[-D' q_k a3^{-k}]\le B'\alpha.
-$$
-
+```
 An explicit constant-query reduction transfers the lower law to coherent amplitude estimation on an interior two-dimensional family, where p(theta)=sin^2(theta) is uniformly invertible.
 
 ## Reproduce the finite checks

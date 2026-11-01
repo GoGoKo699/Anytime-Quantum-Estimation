@@ -42,7 +42,7 @@ This work constructs confidence sets that remain valid throughout sequential mea
 
 Kaur Kristjuhan and Dominic W. Berry, *Quantum phase estimation with optimal confidence interval using three control qubits*, arXiv:2601.16474 (2026), studies efficient fixed-horizon confidence-interval phase estimation and control-register implementation.
 
-Simon Morelli, Ricard Ravell Rodríguez, John Calsamiglia, Ramón Muñoz-Tapia, Gael Sentís, and Michalis Skotiniotis, *Quantum sequential parameter testing*, arXiv:2608.01248 (2026), studies variable-stopping continuous-parameter certification, including qubit phase and purity, under a prescribed tolerance. Its task and measured-copy resource model differ from one coherent oracle run whose entire refinement history must remain jointly valid.
+Simon Morelli, Ricard Ravell Rodríguez, John Calsamiglia, Ramón Muñoz-Tapia, Gael Sentís, and Michalis Skotiniotis, *Quantum sequential parameter testing*, arXiv:2608.01248 (2026), studies variable-stopping continuous-parameter certification, including qubit phase and purity, under a prescribed tolerance. Its task and measured-copy resource model differ from one coherent oracle run whose entire refinement history must remain jointly valid. This comparison is based on the primary abstract; a full-text proof comparison was unavailable.
 
 ## Fractal Remez and norming theory
 
@@ -56,12 +56,11 @@ These works place exponential-in-degree norm control on fractal and Cantor-type 
 
 GoGoKo699/Online-Quantum-Readout studies a different online quantum-query resource: a finite known menu of observables is revealed in batches and must be answered at one fixed precision. Its source-query law depends on the request schedule, up to logarithmic factors, as
 
-$$
+```math
 \widetilde\Theta\!\left(
 \frac{\min\{\sum_r\sqrt{b_r},\sqrt L\}}{\epsilon}
 \right).
-$$
-
+```
 Both projects allow persistent quantum memory and committed outputs. Their online axes differ: Online Quantum Readout asks how many different observables arrive and when; Anytime Quantum Estimation asks how many successively finer resolutions of one parameter can remain uniformly efficient under one simultaneous confidence event. The inspected Online Quantum Readout proof does not imply the first-error summability law here.
 
 ## Review limits
