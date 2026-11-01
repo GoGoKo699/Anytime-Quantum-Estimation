@@ -1,0 +1,29 @@
+# Anytime Quantum Estimation
+
+This repository studies the query cost of maintaining simultaneously valid, progressively more precise classical estimates during one coherent quantum phase- or amplitude-estimation run.
+
+## Scientific route
+
+- Overview and principal result: README.md
+- Connected route: science/README.md
+- Exact model and theorem statements: science/model-and-results.md
+- Adaptive finite-prefix probability polynomial: science/probability-polynomials.md
+- Cantor norming and probability propagation: science/cantor-propagation.md
+- First-error summability and asymptotic/finite-scale consequences: science/first-error-summability.md
+- Matching schedules, known-final-horizon boundary, expected refinement, confidence sequences, and amplitude reduction: science/upper-bounds-extensions.md
+- Resource ledger, novelty remainder, and excluded claims: science/interpretation-and-scope.md
+- External and internal comparisons: references/related-work.md
+- Bibliographic metadata: references/bibliography.bib
+- Reproduction commands and limits: verification/README.md
+
+## Essential distinctions
+
+The guarantee is one simultaneous event for all committed outputs of one run. Marginal fixed-time confidence is not enough. The lower law is a limsup/multiscale statement, not a pointwise penalty at every budget.
+
+For finite K, the lower bound concerns the maximum or average normalized deadline T_k 3^{-k}; it does not force the final deadline T_K to contain a log K factor when K is known in advance.
+
+The proof permits adaptive measurements and arbitrary persistent quantum memory. It charges every phase-oracle, inverse, or controlled query. It does not establish a physical-runtime, gate-complexity, noise, or copy-complexity lower bound.
+
+Duchi-Haque's Cantor first-error architecture, fixed-horizon quantum phase estimation and trigonometric-polynomial methods, fractal Remez theory, iterative amplitude-estimation upper bounds, and anytime-valid quantum tomography are prior ingredients or neighboring work. The contribution is the coherent-query all-time summability law and its sharp Heisenberg-envelope consequence.
+
+No educational anchor or 30-milestone map is included at this scientific-research stage. Those are added after the author selects one of the three verified anchors in the next workflow handoff.
