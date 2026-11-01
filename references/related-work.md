@@ -56,12 +56,11 @@ These works place exponential-in-degree norm control on fractal and Cantor-type 
 
 GoGoKo699/Online-Quantum-Readout studies a different online quantum-query resource: a finite known menu of observables is revealed in batches and must be answered at one fixed precision. Its source-query law depends on the request schedule, up to logarithmic factors, as
 
-$$
+```math
 \widetilde\Theta\!\left(
 \frac{\min\{\sum_r\sqrt{b_r},\sqrt L\}}{\epsilon}
 \right).
-$$
-
+```
 Both projects allow persistent quantum memory and committed outputs. Their online axes differ: Online Quantum Readout asks how many different observables arrive and when; Anytime Quantum Estimation asks how many successively finer resolutions of one parameter can remain uniformly efficient under one simultaneous confidence event. The inspected Online Quantum Readout proof does not imply the first-error summability law here.
 
 ## Review limits
