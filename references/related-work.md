@@ -42,7 +42,7 @@ This work constructs confidence sets that remain valid throughout sequential mea
 
 Kaur Kristjuhan and Dominic W. Berry, *Quantum phase estimation with optimal confidence interval using three control qubits*, arXiv:2601.16474 (2026), studies efficient fixed-horizon confidence-interval phase estimation and control-register implementation.
 
-Simon Morelli, Ricard Ravell Rodríguez, John Calsamiglia, Ramón Muñoz-Tapia, Gael Sentís, and Michalis Skotiniotis, *Quantum sequential parameter testing*, arXiv:2608.01248 (2026), studies variable-stopping continuous-parameter certification, including qubit phase and purity, under a prescribed tolerance. Its task and measured-copy resource model differ from one coherent oracle run whose entire refinement history must remain jointly valid.
+Simon Morelli, Ricard Ravell Rodríguez, John Calsamiglia, Ramón Muñoz-Tapia, Gael Sentís, and Michalis Skotiniotis, *Quantum sequential parameter testing*, arXiv:2608.01248 (2026), studies variable-stopping continuous-parameter certification, including qubit phase and purity, under a prescribed tolerance. Its task and measured-copy resource model differ from one coherent oracle run whose entire refinement history must remain jointly valid. This comparison is based on the primary abstract; a full-text proof comparison was unavailable.
 
 ## Fractal Remez and norming theory
 

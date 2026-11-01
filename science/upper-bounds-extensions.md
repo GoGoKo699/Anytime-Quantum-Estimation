@@ -129,7 +129,7 @@ $$
 
 so theta=arcsin(sqrt(p)) is Lipschitz with constant at most 2/sqrt(3) on p in [1/4,3/4].
 
-A fixed basis change diagonalizes Y. Up to parameter-independent gates and global phase,
+A fixed basis change diagonalizes Y. With the eigenvalues ordered appropriately, the exact identity
 
 $$
 U_\theta X U_\theta^{-1}X
@@ -137,7 +137,7 @@ U_\theta X U_\theta^{-1}X
 \operatorname{diag}(e^{-i\theta},e^{i\theta}),
 $$
 
-so one preparation, inverse, or controlled-preparation query in this two-dimensional amplitude family can be simulated with at most two corresponding phase-oracle queries.
+therefore simulates A_theta using parameter-independent basis changes and two phase queries. The identity includes its phase exactly, so controlling the entire construction also simulates a controlled preparation correctly. One preparation, inverse, or controlled-preparation query in this two-dimensional amplitude family costs at most two corresponding phase-oracle queries.
 
 Clip any amplitude estimate to [1/4,3/4] and map it through arcsin(sqrt(.)); clipping cannot increase its error. An all-time amplitude envelope o(log log T/T) would therefore produce a forbidden phase envelope with only constant query overhead.
 

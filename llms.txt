@@ -26,4 +26,12 @@ The proof permits adaptive measurements and arbitrary persistent quantum memory.
 
 Duchi-Haque's Cantor first-error architecture, fixed-horizon quantum phase estimation and trigonometric-polynomial methods, fractal Remez theory, iterative amplitude-estimation upper bounds, and anytime-valid quantum tomography are prior ingredients or neighboring work. The contribution is the coherent-query all-time summability law and its sharp Heisenberg-envelope consequence.
 
-No educational anchor or 30-milestone map is included at this scientific-research stage. Those are added after the author selects one of the three verified anchors in the next workflow handoff.
+## Study route
+
+- Learning entrypoint: learning/README.md
+- Single educational anchor and notation/source bridge: learning/anchor-bridge.md
+- Exactly 30 project-defined understanding targets, with dependencies and source pointers: learning/milestones.md
+
+The anchor is Andrew M. Childs, Lecture Notes on Quantum Algorithms, 17 April 2025. The map has 13 background milestones and 17 narrative milestones. The bridge supplies a one-query interference example and explains which probability, Cantor and sequential-inference ingredients the repository develops beyond the anchor.
+
+For a conceptual introduction, begin with the bridge and then the milestone map. For a theorem or proof question, use the authoritative science page above. Finite schedule checks illustrate confidence allocation and do not certify the universal lower bound. The shared learning material does not record personal assessment attempts or progress.

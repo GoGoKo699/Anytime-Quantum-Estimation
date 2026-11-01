@@ -67,6 +67,10 @@ Start with [the exact model and results](science/model-and-results.md), then fol
 
 See [related work](references/related-work.md), [bibliographic records](references/bibliography.bib), and [verification](verification/README.md). The [LLM reading guide](llms.txt) maps questions to authoritative files.
 
+## Learn the project
+
+The learning route uses **Andrew Childs's _Lecture Notes on Quantum Algorithms_ (17 April 2025)** as its single educational anchor. Start with [the phase-estimation bridge](learning/anchor-bridge.md), then follow [the 30-milestone map](learning/milestones.md). The [learning entrypoint](learning/README.md) explains the route from quantum-query foundations to the probability-propagation proof and its operational boundaries.
+
 ## Why this is not a classical theorem in new notation
 
 Duchi and Haque established a Cantor-tree sequential-testing architecture for classical time-uniform estimation. Their lower step uses iid likelihoods and relative-entropy control between nearby hypotheses. That step does not directly transfer to a coherent phase oracle: with enough coherent queries, distinct point phases can become perfectly distinguishable.
