@@ -2,9 +2,9 @@
 
 The map follows one question: what prevents a continuing coherent quantum estimator from making every committed resolution as efficient as a separately chosen terminal estimate?
 
-There are **13 background/preliminaries milestones** and **17 narrative/innovation milestones**. The background assembles quantum access, joint probability, bandwidth and Cantor geometry into the exact task. The narrative connects local propagation to a global resource law and then tests its operational boundaries. This allocation reflects the several mathematical ingredients needed for one central mechanism. Within each phase, the route moves from individual objects to an integrated account.
+There are **13 background/preliminaries milestones** and **17 narrative/innovation milestones**. The background assembles quantum access, joint probability, bandwidth and Cantor geometry into the exact task. The narrative connects local propagation to a global resource law, tests its operational boundaries, and extends the mechanism to expiring reversible samplers with charged local replay. This allocation reflects the several mathematical ingredients needed for one central mechanism. Within each phase, the route moves from individual objects to an integrated account.
 
-The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_, 17 April 2025, with the [section and notation bridge](anchor-bridge.md). A pointer to the bridge's local derivation means that the anchor does not supply that ingredient. The targets express global understanding; specialist proof details remain in `science/`.
+The single educational anchor is Nielsen and Chuang's _Quantum Computation and Quantum Information_, 10th Anniversary Edition (2010), abbreviated N&C, with the [section and notation bridge](anchor-bridge.md). A pointer to the bridge's local derivation means that the anchor does not supply that ingredient. The targets express global understanding; specialist proof details remain in `science/`.
 
 ## Background and preliminaries: M01–M13
 
@@ -14,7 +14,7 @@ The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_,
 - **Understanding target:** Explain phase relative to a reference component, and distinguish it from a physically irrelevant global phase.
 - **Dependencies and story role:** None; introduces the parameter the whole task estimates.
 - **Conceptual connection:** A controlled phase query makes an unknown angle accessible through interference.
-- **Sources:** Childs §1.1 and §4.3; [oracle model](../science/model-and-results.md#phase-oracle-model).
+- **Sources:** N&C §§2.2.7 and 5.2; [oracle model](../science/model-and-results.md#phase-oracle-model).
 
 ### M02 — A physical event probability
 
@@ -22,7 +22,7 @@ The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_,
 - **Understanding target:** Follow the preparation, oracle, Hadamard and measurement example, including its sign ambiguity.
 - **Dependencies and story role:** M01; turns a phase into a concrete classical event.
 - **Conceptual connection:** The cosine likelihood foreshadows finite Fourier bandwidth.
-- **Sources:** Childs §1.1; [one-query example](anchor-bridge.md#a-complete-one-query-example).
+- **Sources:** N&C §§2.2.1–2.2.3; [one-query example](anchor-bridge.md#a-complete-one-query-example).
 
 ### M03 — The query ledger
 
@@ -30,7 +30,7 @@ The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_,
 - **Understanding target:** Charge powers, inverse calls and controlled calls while separating query count from gates and physical duration.
 - **Dependencies and story role:** M01–M02; fixes the comparison before discussing efficiency.
 - **Conceptual connection:** High coherent powers amplify phase only by using the charged access.
-- **Sources:** Childs §4.3 and §21.2; [resource ledger](../science/interpretation-and-scope.md#resource-ledger).
+- **Sources:** N&C §§3.2.1, 4.3 and 5.2; [resource ledger](../science/interpretation-and-scope.md#resource-ledger).
 
 ### M04 — A terminal phase estimate
 
@@ -38,7 +38,7 @@ The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_,
 - **Understanding target:** Explain inverse-precision query scaling and the role of a separate confidence requirement.
 - **Dependencies and story role:** M03; establishes the inherited terminal baseline.
 - **Conceptual connection:** Fourier phase estimation supplies an estimator; the optimal confidence dependence comes from the cited research literature.
-- **Sources:** Childs §§4.1–4.3; [fixed-horizon comparison](../references/related-work.md#mande-and-de-wolf-fixed-horizon-phase-estimation).
+- **Sources:** N&C §5.2; [fixed-horizon comparison](../references/related-work.md#mande-and-de-wolf-fixed-horizon-phase-estimation).
 
 ### M05 — Error and confidence are different
 
@@ -62,15 +62,15 @@ The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_,
 - **Understanding target:** Explain intermediate instruments, feedback, retained memory and immutable reported values.
 - **Dependencies and story role:** M03 and M06; prevents a restart-only interpretation of the theorem.
 - **Conceptual connection:** Powerful internal coherence coexists with a classical event in the observable transcript.
-- **Sources:** Childs §21.2 as a query-model entry point; [adaptive event proof](../science/probability-polynomials.md).
+- **Sources:** N&C §§4.4 and 8.2.3 for measurement and instrument foundations; [adaptive event proof](../science/probability-polynomials.md).
 
 ### M08 — Finite queries imply finite bandwidth
 
 - **Central question:** Why is a transcript event's likelihood a trigonometric polynomial?
 - **Understanding target:** Track Laurent exponents through queries and explain why probabilities have degree at most twice the query count.
 - **Dependencies and story role:** M02–M03 and M07; supplies the universal quantum constraint.
-- **Conceptual connection:** The polynomial-method idea extends from a terminal acceptance bit to a finite transcript event.
-- **Sources:** Childs §21.3; [amplitude and density proofs](../science/probability-polynomials.md).
+- **Conceptual connection:** Tracking the physical circuit extends a terminal acceptance argument to every finite transcript event.
+- **Sources:** N&C §§4.3–4.4 for the circuit foundations; the project supplies the polynomial argument; [amplitude and density proofs](../science/probability-polynomials.md).
 
 ### M09 — Global probability bounds control derivatives
 
@@ -210,42 +210,43 @@ The single educational anchor is Childs's _Lecture Notes on Quantum Algorithms_,
 - **Conceptual connection:** Simultaneous efficiency at every scale is more demanding than optimal cost at one known final precision.
 - **Sources:** [known final horizon](../science/upper-bounds-extensions.md#finite-k-and-the-known-final-horizon-boundary); [schedule reproduction](../verification/README.md).
 
-### M26 — Random refinement-hitting times
+### M26 — Random refinement times and optional stopping
 
-- **Central question:** Does allowing random query deadlines escape the mechanism?
-- **Understanding target:** Apply Markov truncation to worst-case expected hitting cost, and identify the required finite-expectation and joint-correctness assumptions.
-- **Dependencies and story role:** M17–M21; extends the physical-event argument to a fixed truncation cap.
-- **Conceptual connection:** Random stopping is handled by a bounded-prefix event, rather than an unjustified polynomial for an unlimited transcript.
-- **Sources:** [expected refinement times](../science/upper-bounds-extensions.md#expected-refinement-times); [Theorem 2](../science/model-and-results.md#theorem-2-expected-refinement-costs).
+- **Central question:** Can random query deadlines or data-dependent stopping escape the phase mechanism?
+- **Understanding target:** Apply Markov truncation to finite worst-case expected hitting costs and analyze the resulting bounded-prefix event. Reduce deterministic interval diameters or expected precision-hitting times to the appropriate theorem. Explain why selecting an already covered interval adds no failure event, whereas making that interval small consumes queries. These expected-cost extensions concern the original phase model; the expiring-source theorem here uses deterministic pathwise deadlines.
+- **Dependencies and story role:** M06 and M17–M25; tests statistical stopping freedoms without changing the physical event being bounded.
+- **Conceptual connection:** Simultaneous coverage and the speed of attaining precision are separate operational guarantees.
+- **Sources:** [expected refinement times](../science/upper-bounds-extensions.md#expected-refinement-times), [confidence sequences](../science/upper-bounds-extensions.md#confidence-sequences-and-optional-stopping), and [extension boundaries](../science/expiring-samplers.md).
 
-### M27 — Confidence intervals and optional stopping
+### M27 — A charged amplitude-estimation transfer
 
-- **Central question:** What does simultaneous coverage imply for a data-dependent stopping rule?
-- **Understanding target:** Reduce deterministic diameters or expected precision-hitting times to the appropriate theorem and separate coverage from shrinkage speed.
-- **Dependencies and story role:** M06 and M26; connects the query law to sequential inference.
-- **Conceptual connection:** Selecting an already-covered interval adds no new failure event, while attaining its precision consumes resources.
-- **Sources:** [confidence sequences and optional stopping](../science/upper-bounds-extensions.md#confidence-sequences-and-optional-stopping).
+- **Central question:** Which amplitude interface inherits the phase obstruction directly?
+- **Understanding target:** Explain the two-query rotation simulation, clipping and the interior inverse Lipschitz bound, including controlled and inverse access. Near a known rare-event scale, distinguish the amplitude angle from the Bernoulli probability and identify the scale factor needed when translating errors.
+- **Dependencies and story role:** M03, M21 and M26; tests a task-to-task implication before adding source expiration.
+- **Conceptual connection:** An ordinary rotation subfamily supplies the coherent branch, while expiration requires a separate replay-sensitive argument.
+- **Sources:** N&C §§5.2, 6.1 and 6.3; [explicit reduction](../science/upper-bounds-extensions.md#explicit-amplitude-estimation-reduction), [Corollary 3](../science/model-and-results.md#corollary-3-coherent-amplitude-estimation), and [rare-scale transfer](../science/expiring-samplers.md).
 
-### M28 — Transfer to coherent amplitude estimation
+### M28 — Expiring windows and polynomial quantum channels
 
-- **Central question:** Which amplitude interface inherits the phase obstruction?
-- **Understanding target:** Explain the two-query rotation simulation, clipping and the interior inverse Lipschitz bound, including controlled and inverse access.
-- **Dependencies and story role:** M03, M21 and M26; tests a concrete task-to-task transfer with charged resources.
-- **Conceptual connection:** An interior two-dimensional subfamily converts amplitude accuracy into phase accuracy at constant query overhead.
-- **Sources:** [explicit reduction](../science/upper-bounds-extensions.md#explicit-amplitude-estimation-reduction); [Corollary 3](../science/model-and-results.md#corollary-3-coherent-amplitude-estimation).
+- **Central question:** What remains analytic when the sampler's garbage changes and each source expires?
+- **Understanding target:** State the exact inverse, known-scale, zero-drift and classical source-retirement promises. Explain finite nuisance phases drawn once per source, averaging of unnormalized instruments, and cancellation of odd square-root powers. A single source window with two calls has a channel polynomial of degree at most two. Group whole source windows by actual calls, retaining memory and histories, without charging unused capacity or splitting a source across blocks.
+- **Dependencies and story role:** M03, M07–M09 and M27; constructs the physical family and cost grouping required for the new transfer.
+- **Conceptual connection:** The operator-sum language extends from one measurement to an averaged block of adaptive source interactions.
+- **Sources:** N&C §8.2.3 and §9.2.1; [expiring-sampler model and shared-proof route](../science/expiring-samplers.md).
 
-### M29 — What the result adds
+### M29 — The replay branch pays the confidence price
 
-- **Central question:** What remains after inherited ingredients are credited?
-- **Understanding target:** Distinguish classical first-error architecture, quantum polynomial methods, norming theory, terminal estimation and copy-based confidence sequences from the coherent all-scale lower law.
-- **Dependencies and story role:** M14–M28; integrates the mechanism with the closest work and its operational significance.
-- **Conceptual connection:** Novelty lies in a justified coherent-query transfer and consequence, rather than the presence of familiar tools.
-- **Sources:** [related work](../references/related-work.md); [interpretation](../science/interpretation-and-scope.md).
+- **Central question:** How does bounded replay enter the all-time summability exponent?
+- **Understanding target:** Follow channel-norm polynomial derivatives through complete-window blocks, giving replay-sensitive probability propagation. Feed that estimate into disjoint first errors, and combine it with the clean-rotation branch to obtain normalized deadlines $`T_k\epsilon_k/A_m(p_0)`$, where $`A_m(p_0)=\max\{\sqrt{p_0},1/m\}`$. Explain the attaining Ramsey schedule's physical cap on all RUS attempts. For two uses per source, tiny $`p_0`$ does not remove the replay branch's confidence overhead.
+- **Dependencies and story role:** M14, M19–M25 and M28; integrates the new channel argument with the established confidence architecture.
+- **Conceptual connection:** A direct propagation theorem supplies the missing joint obstruction; multiplying two existing lower bounds would not establish it.
+- **Sources:** [expiring-sampler theorem and charged construction](../science/expiring-samplers.md), [related work](../references/related-work.md), and [interpretation](../science/interpretation-and-scope.md).
 
 ### M30 — The complete operational story
 
-- **Central question:** When does this theorem change an estimator's claimed resource guarantee?
-- **Understanding target:** State the task, proof chain, matching upper order and quantifier limits; identify different access/output models and distinguish analytical proof from finite arithmetic checks.
-- **Dependencies and story role:** M13 and M21–M29; synthesizes the entire project without adding a new task.
-- **Conceptual connection:** A trustworthy continuing classical record has a multiscale cost even when quantum memory and adaptive control are unrestricted.
-- **Sources:** [main results](../science/model-and-results.md), [scope and resource ledger](../science/interpretation-and-scope.md), and [verification limits](../verification/README.md).
+- **Central question:** When does the all-time requirement change a coherent estimator's claimed resource guarantee?
+- **Understanding target:** State the original phase task, its proof chain and matching schedule, then the precise expiring-source transfer and shared ownership. Keep limsup and maximum-normalized-deadline quantifiers distinct from a pointwise or final-only lower bound. Identify the zero-drift, exact-inverse, known-scale, retirement and coherence limits. Credit phase estimation, norming theory, first-error architecture, gearbox methods and the new replay-sensitive channel argument separately; distinguish analytical proofs from finite checks.
+- **Dependencies and story role:** M13 and M21–M29; synthesizes both the original confidence theorem and its joint replay consequence.
+- **Conceptual connection:** A trustworthy continuing classical record has a multiscale cost determined jointly by the access model and the physical events it permits.
+- **Sources:** N&C §§5.2, 6.1, 6.3, 8.2.3 and 9.2.1; [main results](../science/model-and-results.md), [expiring samplers](../science/expiring-samplers.md), [scope and ledger](../science/interpretation-and-scope.md), and [verification limits](../verification/README.md).
+

@@ -114,3 +114,23 @@ For any fixed alpha<1/2 the same statement holds with constants depending only o
 In the standard coherent amplitude-estimation interface with access to a preparation unitary A, A^{-1}, controlled versions, and a known success projector, an interior two-dimensional subfamily reduces to the phase oracle with constant query overhead. Therefore an all-time amplitude envelope o(log log T/T) is impossible as well, while standard fixed-confidence amplitude estimation supplies the matching staged upper order.
 
 The explicit reduction is in [upper bounds, extensions, and boundaries](upper-bounds-extensions.md).
+
+## Theorem 3: expiring reversible samplers
+
+The [shared sampler transfer](expiring-samplers.md) considers exact common mean $`p\in[p_0,2p_0]`$, known $`0\lt p_0\le1/16`$, and at most $`m\ge2`$ total forward/inverse calls per chronological source window. Sources cannot be revisited or coherently selected across identities. Every actual call and failed repeat-until-success attempt is charged. Put
+
+```math
+A_m(p_0)=\max\{\sqrt{p_0},1/m\}.
+```
+
+For geometric mean tolerances $`\epsilon_k=c p_0 3^{-k}`$ and increasing deterministic actual-call deadlines reaching radii below $`\epsilon_k`$, one simultaneous confidence event implies
+
+```math
+\sum_k\exp\!\left[-D\frac{T_k\epsilon_k}{A_m(p_0)}\right]
+\le B\alpha,
+\qquad 0<\alpha\le1/4.
+```
+
+There is a matching geometric schedule with $`T_k=O(A_m(p_0)\epsilon_k^{-1}[\log(k+2)+\log(1/\alpha)])`$. Hence the all-time envelope has order $`A_m(p_0)[\log\log T+\log(1/\alpha)]/T`$ in the upper-envelope and multiscale-lower senses. At $`m=2`$, $`A_2=1/2`$ even for arbitrarily small known $`p_0`$: the replay branch also pays the confidence overhead.
+
+This is a zero-drift, deterministic-budget theorem. Its new lower step is a replay-sensitive probability-propagation bound, rather than multiplication of the original phase theorem by a constant-confidence replay bound. The [standalone transfer account](expiring-samplers.md) specifies the exact hypotheses, shared proof ownership, charged construction and known-final-horizon boundary.

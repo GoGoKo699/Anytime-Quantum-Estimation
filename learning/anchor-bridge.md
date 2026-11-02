@@ -2,21 +2,22 @@
 
 ## One educational anchor
 
-Andrew M. Childs, **_Lecture Notes on Quantum Algorithms_**, dated **17 April 2025**: [author-hosted PDF](https://www.cs.umd.edu/~amchilds/qa/qa.pdf).
+Michael A. Nielsen and Isaac L. Chuang, **_Quantum Computation and Quantum Information_, 10th Anniversary Edition (2010)**, Cambridge University Press, ISBN 9781107002173. The [publisher page](https://www.cambridge.org/highereducation/books/quantum-computation-and-quantum-information/01E10196D0A682A6AEFFEA52D53BE9AE) and [official contents](https://assets.cambridge.org/97811070/02173/toc/9781107002173_toc.pdf) identify the edition and section titles. Section references below are selective foundations, rather than a requirement to read the whole book.
 
-Use §1.1 for quantum states, §§4.1–4.3 for Fourier phase estimation, and §§21.1–21.3 for query models and the polynomial method. The section identifiers refer to that dated version. These are selected entry points, not a requirement to read the whole source.
+| Anchor sections | Foundation used here | Project bridge |
+|---|---|---|
+| §§2.2.2, 2.2.3, 2.2.7 and 4.3–4.4 | Unitary dynamics, measurement, relative phase and controlled circuits | Physical committed-output events, including adaptive records |
+| §5.2, **Phase estimation**, and §5.2.1 | Repeated access magnifies an eigenphase and yields a terminal estimate | Charge every power, then require one continuing record to be simultaneously reliable |
+| §§6.1 and 6.3, **Quantum counting** | Reflections, amplitude amplification and the amplitude–phase connection | Transfer to amplitude families and distinguish locally reusable from expired sources |
+| §8.2.3, **Operator-sum representation** | Instruments, auxiliary-system measurements and completely positive maps | Average complete source-window instruments, preserving references and unnormalized outcome probabilities |
+| §9.2.1, **Trace distance** | Operational distinguishability and contraction under physical channels | Keep the converse valid for arbitrary retained quantum memory |
+| Appendix 1 | Basic conditional probability and averages | Distinguish marginal confidence, simultaneous coverage and first-error events |
 
-| Foundation | Connection supplied here |
-|---|---|
-| A controlled unitary exposes its eigenphase | Fix a continuous, one-parameter phase oracle and charge each use. |
-| Phase estimation reports an answer at a chosen precision | Require all committed answers from one continuing run to be jointly correct. |
-| A query algorithm constrains acceptance polynomials | Prove a trigonometric bandwidth bound for any finite transcript event, including adaptive instruments. |
-
-The anchor supplies the algorithmic foundations. The Cantor construction, norming estimate, probability propagation and first-error argument are developed in the repository's [scientific account](../science/README.md). Research references are attribution and proof dependencies, rather than additional educational anchors.
+The source supplies quantum foundations. The repository supplies the finite-transcript polynomial proof, Bernstein and Markov derivative steps, Cantor norming and first-error summability. The expiring-source extension additionally supplies its continuous finite-twirl channel family, actual-call blocks and replay-sensitive propagation. Research references give attribution and proof dependencies; they are not additional educational anchors.
 
 ## Notation and charged access
 
-The eigenvalue convention in the phase-estimation section is often written as a fraction of a full turn. Here the angle is in radians:
+Phase estimation may write an eigenvalue as a fraction of a full turn. Here the angle is in radians:
 
 ```math
 e^{2\pi i\phi}=e^{i\theta},\qquad \theta=2\pi\phi.
@@ -85,6 +86,33 @@ For each true prefix, use the event that previous decoded digits equal that pref
 \sum_k\exp[-D T_k\ell_k]\le B\alpha.
 ```
 The [first-error proof](../science/first-error-summability.md) supplies the prior weights and constants. A constant normalized cost $`T_k\ell_k`$ at every level would make this series diverge. This is the mechanism that rules out a uniformly constant-overhead all-time Heisenberg envelope.
+
+
+## From expiring sources to replay-sensitive confidence
+
+The [expiring-sampler extension](../science/expiring-samplers.md) is readable independently of the companion. Each source supplies an unknown unitary $`U_i`$ and its exact inverse for at most $`m`$ total physical calls. After retirement it cannot be revisited; no coherent selector over source identities is supplied. The common mean is $`p\in[p_0,2p_0]`$ with known $`p_0`$. Zero drift is assumed. Forward, inverse and controlled invocations all count, including failed repeat-until-success attempts.
+
+Section 8.2.3 supplies the language for two distinct instruments. The attaining algorithm's corrected failure restores the probe; a success adds a useful phase. The lower proof instead averages over finite nuisance phases fixed within each source window. The latter map remains a physical channel, including its classical outcomes, for every real $`p\in[0,1]`$. A successful branch normalized by its probability would not satisfy that channel premise.
+
+For $`m=2`$, averaging at most four matrix-entry factors removes odd powers of both square roots. The resulting two-call instrument is a degree-two channel polynomial in $`p`$. In general, whole source windows are grouped until a block has made order $`m`$ actual calls. No source crosses a boundary. Channel-norm polynomial derivative bounds and block composition then replace the phase-only Fourier derivative estimate. This is the missing transfer step; a constant-confidence replay lower bound cannot simply be multiplied by the phase all-time lower bound.
+
+The shared result uses
+
+```math
+A_m(p_0)=\max\{\sqrt{p_0},1/m\},\qquad
+\sum_k\exp\!\left[-D T_k\epsilon_k/A_m(p_0)\right]
+\le B\alpha.
+```
+
+The replay-sensitive propagation law supplies the $`1/m`$ branch; a clean rotation family supplies the $`\sqrt{p_0}`$ branch. The same first-error architecture then applies with its assumptions verified. Thus both branches pay the all-scale confidence price. In particular, $`m=2`$ and arbitrarily small $`p_0`$ still give order $`[\log\log T+\log(1/\alpha)]/T`$ after initialization.
+
+The upper construction prescribes a deterministic number $`S`$ of accepted rotations and caps actual attempts at
+
+```math
+N=\left\lceil4S+16\log\frac2\beta\right\rceil.
+```
+
+For two-call attempts the physical cap is $`2N`$, including failures. General amplification costs $`2\ell N`$, with legal odd $`\ell=\Theta(\min\{m,p_0^{-1/2}\})`$. A summable outer confidence allocation produces one all-time good event. The companion owns the [canonical shared proof](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/99d19bf29d1be3f6d88edcca86f0214a9495c78b/science/anytime-confidence.md); this repository owns the committed-confidence interpretation and transfer account. Neither a fixed positive drift nor an unknown scale is covered by the extension as stated.
 
 ## Read the conclusion with its quantifiers
 

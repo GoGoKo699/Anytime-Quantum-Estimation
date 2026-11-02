@@ -27,6 +27,10 @@ The new conclusion is the coherent-query transfer:
 
 Classical iid relative-entropy control does not establish this because coherent point hypotheses may become perfectly distinguishable. Fixed-time quantum polynomial lower bounds do not by themselves couple indefinitely many successive commitments.
 
+The [shared expiring-sampler result](expiring-samplers.md) adds a second transfer step. Averaging independently phase-twirled fresh sources yields channel polynomials; grouping source windows by actual calls controls their derivatives at rate $`Q\min(m,Q)`$. The existing Cantor argument then forces the replay-dependent term, as well as the ordinary rare-amplitude term, to pay the all-time confidence price. For $`m=2`$, this removes a possible ambiguity: very small $`p_0`$ does not suppress that overhead by $`\sqrt{p_0}`$.
+
+Quantum Mean Replay owns the canonical shared proof and charged construction. This repository owns the committed-confidence interpretation and the transfer into its first-error framework. The two accounts share this result, rather than presenting it as two independent discoveries.
+
 ## Claims deliberately not made
 
 The project does not claim:
@@ -44,6 +48,8 @@ A finite discrete phase promise can allow exact discrimination and lies outside 
 ## Resource ledger
 
 Charged: every U_theta, U_theta^{-1}, and controlled query, including preprocessing before a reported deadline.
+
+For the expiring-sampler transfer, every forward and inverse source call also counts toward the same local replay cap, including failed attempts. A failed attempt's known correction restores the probe but does not refund its source calls. The transfer requires zero drift and exact within-window inverses, and uses deterministic pathwise budgets; the phase model's expected-refinement theorem is not automatically a theorem for these samplers.
 
 Allowed without query charge: parameter-independent gates, ancillas and persistent memory, adaptive classical computation, intermediate instruments, and storage of previous classical outputs.
 
