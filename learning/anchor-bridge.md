@@ -112,7 +112,7 @@ The upper construction prescribes a deterministic number $`S`$ of accepted rotat
 N=\left\lceil4S+16\log\frac2\beta\right\rceil.
 ```
 
-For two-call attempts the physical cap is $`2N`$, including failures. General amplification costs $`2\ell N`$, with legal odd $`\ell=\Theta(\min\{m,p_0^{-1/2}\})`$. A summable outer confidence allocation produces one all-time good event. The companion owns the [canonical shared proof](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/6b28e1661ec4e9f6c8ee720e4942291b6a42acc3/science/anytime-confidence.md); this repository owns the committed-confidence interpretation and transfer account. Neither a fixed positive drift nor an unknown scale is covered by the extension as stated.
+For two-call attempts the physical cap is $`2N`$, including failures. General amplification costs $`2\ell N`$, with legal odd $`\ell=\Theta(\min\{m,p_0^{-1/2}\})`$. A summable outer confidence allocation produces one all-time good event. The companion owns the [canonical shared proof](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/a0eaeaba3381af105d1456f230279d47e9c26cf6/science/anytime-confidence.md); this repository owns the committed-confidence interpretation and transfer account. Neither a fixed positive drift nor an unknown scale is covered by the extension as stated.
 
 ## Read the conclusion with its quantifiers
 

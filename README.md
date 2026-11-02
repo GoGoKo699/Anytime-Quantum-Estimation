@@ -2,7 +2,7 @@
 
 **What does a quantum estimator pay if every intermediate answer must remain trustworthy whenever the computation is stopped?** This project gives a sharp query-complexity law for one coherent phase-estimation run that emits committed classical estimates at progressively finer resolutions.
 
-**Sister project: [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay).** Together the projects establish the all-time confidence law for expiring reversible samplers. This repository supplies the [committed-confidence interpretation and transfer](science/expiring-samplers.md); its sister owns the [canonical joint sampler proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/6b28e1661ec4e9f6c8ee720e4942291b6a42acc3/science/anytime-confidence.md).
+**Sister project: [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay).** Together the projects establish the all-time confidence law for expiring reversible samplers. This repository supplies the [committed-confidence interpretation and transfer](science/expiring-samplers.md); its sister owns the [canonical joint sampler proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/a0eaeaba3381af105d1456f230279d47e9c26cf6/science/anytime-confidence.md).
 
 For the phase oracle
 
@@ -53,7 +53,7 @@ The finite-K theorem is a tradeoff over **all normalized deadlines**, not a lowe
 
 ## Joint result: expiring samplers and bounded replay
 
-Suppose every source has the same mean $`p\in[p_0,2p_0]`$ and expires after at most $`m`$ total forward/inverse calls, with $`m\ge2`$ and known $`0<p_0\le1/16`$. Put $`A_m=\max\{\sqrt{p_0},1/m\}`$. Geometric committed errors $`\epsilon_k=c p_0 3^{-k}`$ obey the joint lower law
+Suppose every source has the same mean $`p\in[p_0,2p_0]`$ and expires after at most $`m`$ total forward/inverse calls, with $`m\ge2`$ and known $`0\lt p_0\le1/16`$. Put $`A_m=\max\{\sqrt{p_0},1/m\}`$. Geometric committed errors $`\epsilon_k=c p_0 3^{-k}`$ obey the joint lower law
 
 ```math
 \sum_k \exp[-D T_k\epsilon_k/A_m]\le B\alpha.

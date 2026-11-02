@@ -2,11 +2,11 @@
 
 The coherent-phase theorem extends to a source that disappears after a bounded number of local replays. The relevant confidence cost multiplies the **full replay-dependent frontier**, including its rare-probability replay term. This requires a new probability-propagation argument; the two earlier lower bounds alone do not imply it.
 
-This is a shared result with [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay). That repository owns the [canonical shared proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/6b28e1661ec4e9f6c8ee720e4942291b6a42acc3/science/anytime-confidence.md). This page states the complete transfer model, result and proof interface so the confidence account can be read independently. The existing [phase theorem](model-and-results.md) retains its original assumptions and conclusions.
+This is a shared result with [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay). That repository owns the [canonical shared proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/a0eaeaba3381af105d1456f230279d47e9c26cf6/science/anytime-confidence.md). This page states the complete transfer model, result and proof interface so the confidence account can be read independently. The existing [phase theorem](model-and-results.md) retains its original assumptions and conclusions.
 
 ## 1. Source, commitment and cost model
 
-Fix a known scale $`0<p_0\le1/16`$ and an unknown common probability $`p\in[p_0,2p_0]`$. Source $`i`$ is an otherwise unknown unitary $`U_i`$ on a known initialized workspace, with a known success projector $`\Pi`$ and
+Fix a known scale $`0\lt p_0\le1/16`$ and an unknown common probability $`p\in[p_0,2p_0]`$. Source $`i`$ is an otherwise unknown unitary $`U_i`$ on a known initialized workspace, with a known success projector $`\Pi`$ and
 
 ```math
 \langle0|U_i^\dagger\Pi U_i|0\rangle=p.
