@@ -117,7 +117,7 @@ The explicit reduction is in [upper bounds, extensions, and boundaries](upper-bo
 
 ## Theorem 3: expiring reversible samplers
 
-The [shared sampler transfer](expiring-samplers.md) considers exact common mean $`p\in[p_0,2p_0]`$, known $`0<p_0\le1/16`$, and at most $`m\ge2`$ total forward/inverse calls per chronological source window. Sources cannot be revisited or coherently selected across identities. Every actual call and failed repeat-until-success attempt is charged. Put
+The [shared sampler transfer](expiring-samplers.md) considers exact common mean $`p\in[p_0,2p_0]`$, known $`0\lt p_0\le1/16`$, and at most $`m\ge2`$ total forward/inverse calls per chronological source window. Sources cannot be revisited or coherently selected across identities. Every actual call and failed repeat-until-success attempt is charged. Put
 
 ```math
 A_m(p_0)=\max\{\sqrt{p_0},1/m\}.

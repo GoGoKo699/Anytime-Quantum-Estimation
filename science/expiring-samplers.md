@@ -2,7 +2,7 @@
 
 The coherent-phase theorem extends to a source that disappears after a bounded number of local replays. The relevant confidence cost multiplies the **full replay-dependent frontier**, including its rare-probability replay term. This requires a new probability-propagation argument; the two earlier lower bounds alone do not imply it.
 
-This is a shared result with [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay). That repository owns the [canonical shared proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/a0eaeaba3381af105d1456f230279d47e9c26cf6/science/anytime-confidence.md). This page states the complete transfer model, result and proof interface so the confidence account can be read independently. The existing [phase theorem](model-and-results.md) retains its original assumptions and conclusions.
+This is a shared result with [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay). That repository owns the [canonical shared proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/99d19bf29d1be3f6d88edcca86f0214a9495c78b/science/anytime-confidence.md). This page states the complete transfer model, result and proof interface so the confidence account can be read independently. The existing [phase theorem](model-and-results.md) retains its original assumptions and conclusions.
 
 ## 1. Source, commitment and cost model
 
@@ -99,41 +99,41 @@ is achievable, while the displayed limsup lower bound makes its iterated-logarit
 
 The new input to this repository's [Cantor propagation](cantor-propagation.md) argument is a derivative bound for **unnormalized physical transcript events**. Its proof has four steps; the full channel and call-accounting details are in the canonical shared proof.
 
-1. **One continuous hard family.** Independently for each source, draw fixed phases $`a,b\in\{0,1\}`$ and $`c\in\{0,1,2,3\}`$, and supply
+### Step 1 — One continuous hard family Independently for each source, draw fixed phases $`a,b\in\{0,1\}`$ and $`c\in\{0,1,2,3\}`$, and supply
 
-   ```math
-   U_{a,b,c;p}=i^c Z^a R_p Z^b,
-   \qquad
-   R_p=\begin{pmatrix}
-   \sqrt{1-p}&-\sqrt p\\
-   \sqrt p&\sqrt{1-p}
-   \end{pmatrix}.
-   ```
+```math
+U_{a,b,c;p}=i^c Z^a R_p Z^b,
+\qquad
+R_p=\begin{pmatrix}
+\sqrt{1-p}&-\sqrt p\\
+\sqrt p&\sqrt{1-p}
+\end{pmatrix}.
+```
 
-   Every fixed draw has exact mean $`p`$ and its matching inverse. The whole source list is fixed before the run. The phase distribution is separately invariant under either square root changing sign. After averaging, a finite instrument using at most $`L`$ physical calls is therefore polynomial in $`p`$ of degree at most $`L`$. This includes arbitrary references and adaptive controls; conditioning and renormalizing an outcome would invalidate this polynomial assertion.
+Every fixed draw has exact mean $`p`$ and its matching inverse. The whole source list is fixed before the run. The phase distribution is separately invariant under either square root changing sign. After averaging, a finite instrument using at most $`L`$ physical calls is therefore polynomial in $`p`$ of degree at most $`L`$. This includes arbitrary references and adaptive controls; conditioning and renormalizing an outcome would invalidate this polynomial assertion.
 
-2. **Blocks charged by actual calls.** At a prefix cap $`Q\ge1`$, put $`h=\min(m,Q)`$. Begin a block with an unused source. Once its actual-call count reaches $`h`$, finish the current source window and end the block. Full blocks cost between $`h`$ and $`2h-1`$ calls; the final block is truncated at $`Q`$. There are at most $`\lfloor Q/h\rfloor+1`$ blocks, and no source crosses a boundary. Untouched skipped source labels can be integrated away because the hard labels are independent. Full histories, counters, outputs and persistent memory remain at interfaces. Local and global counters are enforced on all parameters, with a fixed abort output outside the cap, so each averaged block is a CPTP channel on the full interval $`p\in[0,1]`$.
+### Step 2 — Blocks charged by actual calls At a prefix cap $`Q\ge1`$, put $`h=\min(m,Q)`$. Begin a block with an unused source. Once its actual-call count reaches $`h`$, finish the current source window and end the block. Full blocks cost between $`h`$ and $`2h-1`$ calls; the final block is truncated at $`Q`$. There are at most $`\lfloor Q/h\rfloor+1`$ blocks, and no source crosses a boundary. Untouched skipped source labels can be integrated away because the hard labels are independent. Full histories, counters, outputs and persistent memory remain at interfaces. Local and global counters are enforced on all parameters, with a fixed abort output outside the cap, so each averaged block is a CPTP channel on the full interval $`p\in[0,1]`$.
 
-3. **A replay-sensitive derivative estimate.** Each block channel has polynomial degree at most $`2h`$. Markov's polynomial inequality applied to norming linear functionals bounds its derivatives in diamond norm by $`(C h^2)^j`$. Leibniz's rule, channel-norm submultiplicativity and the block count then give, for every finite-prefix event likelihood $`f_Q`$,
+### Step 3 — A replay-sensitive derivative estimate Each block channel has polynomial degree at most $`2h`$. Markov's polynomial inequality applied to norming linear functionals bounds its derivatives in diamond norm by $`(C h^2)^j`$. Leibniz's rule, channel-norm submultiplicativity and the block count then give, for every finite-prefix event likelihood $`f_Q`$,
 
-   ```math
-   0\le f_Q(p)\le1,
-   \qquad
-   \sup_{p\in[0,1]}|f_Q^{(j)}(p)|
-   \le [C Q\min(m,Q)]^j.
-   ```
+```math
+0\le f_Q(p)\le1,
+\qquad
+\sup_{p\in[0,1]}|f_Q^{(j)}(p)|
+\le [C Q\min(m,Q)]^j.
+```
 
-   The bound charges actual calls rather than $`m`$ padded calls for every source. It already uses only one-qubit hard sources.
+The bound charges actual calls rather than $`m`$ padded calls for every source. It already uses only one-qubit hard sources.
 
-4. **Propagate first errors.** Substitute this derivative estimate for Fourier bandwidth in the existing Taylor-plus-Cantor lemma. An event likely on one child of width $`\ell`$ has average probability at least $`c\exp[-C(Q\min(m,Q)\ell+1)]`$ on its neighbor. The same disjoint first-error events as in [the phase proof](first-error-summability.md) yield
+### Step 4 — Propagate first errors Substitute this derivative estimate for Fourier bandwidth in the existing Taylor-plus-Cantor lemma. An event likely on one child of width $`\ell`$ has average probability at least $`c\exp[-C(Q\min(m,Q)\ell+1)]`$ on its neighbor. The same disjoint first-error events as in [the phase proof](first-error-summability.md) yield
 
-   ```math
-   \sum_k
-   \exp[-D T_k\min(m,T_k)\epsilon_k]
-   \le B\alpha.
-   ```
+```math
+\sum_k
+\exp[-D T_k\min(m,T_k)\epsilon_k]
+\le B\alpha.
+```
 
-   Since $`\min(m,T_k)\le m`$, this implies replay summability with exponent $`mT_k\epsilon_k`$ without requiring $`T_k\ge m`$.
+Since $`\min(m,T_k)\le m`$, this implies replay summability with exponent $`mT_k\epsilon_k`$ without requiring $`T_k\ge m`$.
 
 Separately, choose all sources to be the same clean rotation $`R_p`$. On the known-scale interval, $`p=\sin^2\theta`$ has $`dp/d\theta=\Theta(\sqrt{p_0})`$. The original phase theorem directly gives
 

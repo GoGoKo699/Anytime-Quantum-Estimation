@@ -2,7 +2,7 @@
 
 **What does a quantum estimator pay if every intermediate answer must remain trustworthy whenever the computation is stopped?** This project gives a sharp query-complexity law for one coherent phase-estimation run that emits committed classical estimates at progressively finer resolutions.
 
-**Sister project: [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay).** Together the projects establish the all-time confidence law for expiring reversible samplers. This repository supplies the [committed-confidence interpretation and transfer](science/expiring-samplers.md); its sister owns the [canonical joint sampler proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/a0eaeaba3381af105d1456f230279d47e9c26cf6/science/anytime-confidence.md).
+**Sister project: [Quantum Mean Replay](https://github.com/GoGoKo699/Quantum-Mean-Replay).** Together the projects establish the all-time confidence law for expiring reversible samplers. This repository supplies the [committed-confidence interpretation and transfer](science/expiring-samplers.md); its sister owns the [canonical joint sampler proof and charged construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/99d19bf29d1be3f6d88edcca86f0214a9495c78b/science/anytime-confidence.md).
 
 For the phase oracle
 

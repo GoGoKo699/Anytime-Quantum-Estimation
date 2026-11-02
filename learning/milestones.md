@@ -229,7 +229,7 @@ The single educational anchor is Nielsen and Chuang's _Quantum Computation and Q
 ### M28 — Expiring windows and polynomial quantum channels
 
 - **Central question:** What remains analytic when the sampler's garbage changes and each source expires?
-- **Understanding target:** State the exact inverse, known-scale, zero-drift and classical source-retirement promises. Explain finite nuisance phases drawn once per source, averaging of unnormalized instruments, and cancellation of odd square-root powers. With $`m=2`$ the channel polynomial has degree at most two. Group whole source windows by actual calls, retaining memory and histories, without charging unused capacity or splitting a source across blocks.
+- **Understanding target:** State the exact inverse, known-scale, zero-drift and classical source-retirement promises. Explain finite nuisance phases drawn once per source, averaging of unnormalized instruments, and cancellation of odd square-root powers. A single source window with two calls has a channel polynomial of degree at most two. Group whole source windows by actual calls, retaining memory and histories, without charging unused capacity or splitting a source across blocks.
 - **Dependencies and story role:** M03, M07–M09 and M27; constructs the physical family and cost grouping required for the new transfer.
 - **Conceptual connection:** The operator-sum language extends from one measurement to an averaged block of adaptive source interactions.
 - **Sources:** N&C §8.2.3 and §9.2.1; [expiring-sampler model and shared-proof route](../science/expiring-samplers.md).
