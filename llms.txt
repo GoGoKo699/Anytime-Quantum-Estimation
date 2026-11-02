@@ -11,6 +11,7 @@ This repository studies the query cost of maintaining simultaneously valid, prog
 - Cantor norming and probability propagation: science/cantor-propagation.md
 - First-error summability and asymptotic/finite-scale consequences: science/first-error-summability.md
 - Matching schedules, known-final-horizon boundary, expected refinement, confidence sequences, and amplitude reduction: science/upper-bounds-extensions.md
+- Joint expiring-sampler frontier, rare p0, actual-call accounting and shared proof route: science/expiring-samplers.md
 - Resource ledger, novelty remainder, and excluded claims: science/interpretation-and-scope.md
 - External and internal comparisons: references/related-work.md
 - Bibliographic metadata: references/bibliography.bib
@@ -32,6 +33,8 @@ Duchi-Haque's Cantor first-error architecture, fixed-horizon quantum phase estim
 - Single educational anchor and notation/source bridge: learning/anchor-bridge.md
 - Exactly 30 project-defined understanding targets, with dependencies and source pointers: learning/milestones.md
 
-The anchor is Andrew M. Childs, Lecture Notes on Quantum Algorithms, 17 April 2025. The map has 13 background milestones and 17 narrative milestones. The bridge supplies a one-query interference example and explains which probability, Cantor and sequential-inference ingredients the repository develops beyond the anchor.
+The single shared anchor is Nielsen and Chuang, Quantum Computation and Quantum Information, 10th Anniversary Edition (2010). The map has 13 background milestones and 17 narrative milestones. The bridge supplies a one-query interference example and explains which probability, Cantor and sequential-inference ingredients the repository develops beyond the anchor.
 
 For a conceptual introduction, begin with the bridge and then the milestone map. For a theorem or proof question, use the authoritative science page above. Finite schedule checks illustrate confidence allocation and do not certify the universal lower bound. The shared learning material does not record personal assessment attempts or progress.
+
+Sister GoGoKo699/Quantum-Mean-Replay owns the canonical full proof at science/anytime-confidence.md. This repository owns the committed-confidence interpretation and transfer. At zero drift and m>=2, both terms of A=max(sqrt(p0),1/m) carry the all-time overhead. The joint sampler theorem uses deterministic pathwise actual-call deadlines and charges failed RUS attempts; it does not automatically inherit the phase theorem's expected-cost extension.

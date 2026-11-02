@@ -128,3 +128,11 @@ therefore simulates A_theta using parameter-independent basis changes and two ph
 Clip any amplitude estimate to [1/4,3/4] and map it through arcsin(sqrt(.)); clipping cannot increase its error. An all-time amplitude envelope o(log log T/T) would therefore produce a forbidden phase envelope with only constant query overhead.
 
 The reduction is a worst-case coherent-query statement. It does not automatically apply to copy-only tomography or to hardware models where inversion has a different physical cost.
+
+## Expiring sources and failed attempts
+
+The [expiring-sampler transfer](expiring-samplers.md#4-charged-construction-and-the-final-horizon-boundary) uses a different source interface from the clean two-dimensional reduction. Only a bounded number of calls to the current unknown source is available; its output garbage may change at the next window. A gearbox instrument either transfers a mean-dependent phase to a persistent probe or restores that probe after a known failure correction.
+
+Every attempt is charged, including failures. At $`m=2`$, an attempt costs one preparation and one exact inverse call. A fixed attempt cap turns its success-count schedule into a deterministic physical-query budget; exhausting the cap is a failure included in the allocated confidence budget. Local amplification gives the same construction for general $`m\ge2`$.
+
+For known $`p_0`$ and zero drift, terminal estimation costs $`O(A_m(p_0)\epsilon^{-1}\log(1/\beta))`$, where $`A_m(p_0)=\max\{\sqrt{p_0},1/m\}`$. Applying the geometric confidence schedule gives the matching all-time upper law. Backward-geometric allocation when the final tolerance is specified retains the terminal order $`O(A_m(p_0)\epsilon_K^{-1}\log(1/\alpha))`$. These statements use actual source calls and deterministic caps; no expected-cost extension or free successful-rotation oracle is assumed. The [canonical shared construction](https://github.com/GoGoKo699/Quantum-Mean-Replay/blob/6b28e1661ec4e9f6c8ee720e4942291b6a42acc3/science/anytime-confidence.md) supplies the complete ledger.
