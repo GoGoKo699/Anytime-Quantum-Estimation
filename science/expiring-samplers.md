@@ -99,7 +99,9 @@ is achievable, while the displayed limsup lower bound makes its iterated-logarit
 
 The new input to this repository's [Cantor propagation](cantor-propagation.md) argument is a derivative bound for **unnormalized physical transcript events**. Its proof has four steps; the full channel and call-accounting details are in the canonical shared proof.
 
-### Step 1 — One continuous hard family Independently for each source, draw fixed phases $`a,b\in\{0,1\}`$ and $`c\in\{0,1,2,3\}`$, and supply
+### Step 1 — One continuous hard family
+
+Independently for each source, draw fixed phases $`a,b\in\{0,1\}`$ and $`c\in\{0,1,2,3\}`$, and supply
 
 ```math
 U_{a,b,c;p}=i^c Z^a R_p Z^b,
@@ -112,9 +114,13 @@ R_p=\begin{pmatrix}
 
 Every fixed draw has exact mean $`p`$ and its matching inverse. The whole source list is fixed before the run. The phase distribution is separately invariant under either square root changing sign. After averaging, a finite instrument using at most $`L`$ physical calls is therefore polynomial in $`p`$ of degree at most $`L`$. This includes arbitrary references and adaptive controls; conditioning and renormalizing an outcome would invalidate this polynomial assertion.
 
-### Step 2 — Blocks charged by actual calls At a prefix cap $`Q\ge1`$, put $`h=\min(m,Q)`$. Begin a block with an unused source. Once its actual-call count reaches $`h`$, finish the current source window and end the block. Full blocks cost between $`h`$ and $`2h-1`$ calls; the final block is truncated at $`Q`$. There are at most $`\lfloor Q/h\rfloor+1`$ blocks, and no source crosses a boundary. Untouched skipped source labels can be integrated away because the hard labels are independent. Full histories, counters, outputs and persistent memory remain at interfaces. Local and global counters are enforced on all parameters, with a fixed abort output outside the cap, so each averaged block is a CPTP channel on the full interval $`p\in[0,1]`$.
+### Step 2 — Blocks charged by actual calls
 
-### Step 3 — A replay-sensitive derivative estimate Each block channel has polynomial degree at most $`2h`$. Markov's polynomial inequality applied to norming linear functionals bounds its derivatives in diamond norm by $`(C h^2)^j`$. Leibniz's rule, channel-norm submultiplicativity and the block count then give, for every finite-prefix event likelihood $`f_Q`$,
+At a prefix cap $`Q\ge1`$, put $`h=\min(m,Q)`$. Begin a block with an unused source. Once its actual-call count reaches $`h`$, finish the current source window and end the block. Full blocks cost between $`h`$ and $`2h-1`$ calls; the final block is truncated at $`Q`$. There are at most $`\lfloor Q/h\rfloor+1`$ blocks, and no source crosses a boundary. Untouched skipped source labels can be integrated away because the hard labels are independent. Full histories, counters, outputs and persistent memory remain at interfaces. Local and global counters are enforced on all parameters, with a fixed abort output outside the cap, so each averaged block is a CPTP channel on the full interval $`p\in[0,1]`$.
+
+### Step 3 — A replay-sensitive derivative estimate
+
+Each block channel has polynomial degree at most $`2h`$. Markov's polynomial inequality applied to norming linear functionals bounds its derivatives in diamond norm by $`(C h^2)^j`$. Leibniz's rule, channel-norm submultiplicativity and the block count then give, for every finite-prefix event likelihood $`f_Q`$,
 
 ```math
 0\le f_Q(p)\le1,
@@ -125,7 +131,9 @@ Every fixed draw has exact mean $`p`$ and its matching inverse. The whole source
 
 The bound charges actual calls rather than $`m`$ padded calls for every source. It already uses only one-qubit hard sources.
 
-### Step 4 — Propagate first errors Substitute this derivative estimate for Fourier bandwidth in the existing Taylor-plus-Cantor lemma. An event likely on one child of width $`\ell`$ has average probability at least $`c\exp[-C(Q\min(m,Q)\ell+1)]`$ on its neighbor. The same disjoint first-error events as in [the phase proof](first-error-summability.md) yield
+### Step 4 — Propagate first errors
+
+Substitute this derivative estimate for Fourier bandwidth in the existing Taylor-plus-Cantor lemma. An event likely on one child of width $`\ell`$ has average probability at least $`c\exp[-C(Q\min(m,Q)\ell+1)]`$ on its neighbor. The same disjoint first-error events as in [the phase proof](first-error-summability.md) yield
 
 ```math
 \sum_k
